@@ -10,9 +10,10 @@ namespace AlisPark.DataAccess.Abstract
     public interface ITableDal : IEntityRepository<Table>
     {
         void CloseTable(Table table);
-        void CreateTable();
+        void CreateTable(string x);
         List<Table> GetStartedTables();
         Table GetStartedTableWithId(int tableId);
+        void RemoveTable(int tableId);
         void StartTable(Table table);
     }
 }

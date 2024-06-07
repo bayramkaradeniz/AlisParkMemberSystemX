@@ -115,6 +115,7 @@
     <Compile Include="Abstract\IMemberService.cs" />
     <Compile Include="Abstract\IOrderService.cs" />
     <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Abstract\ITableCategoryService.cs" />
     <Compile Include="Abstract\ITableEventService.cs" />
     <Compile Include="Abstract\ITableService.cs" />
     <Compile Include="Abstract\IWorkerService.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Concrete\MessageSenderManager.cs" />
     <Compile Include="Concrete\OrderManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
+    <Compile Include="Concrete\TableCategoryManager.cs" />
     <Compile Include="Concrete\TableEventManager.cs" />
     <Compile Include="Concrete\TableManager.cs" />
     <Compile Include="Concrete\WorkerManager.cs" />

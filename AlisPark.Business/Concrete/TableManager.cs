@@ -18,10 +18,7 @@ namespace AlisPark.Business.Concerete
             _tableDal = tableDal;
         }
 
-        public void CloseSession(Table table)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public void CloseTable(Table table)
         {
@@ -34,9 +31,11 @@ namespace AlisPark.Business.Concerete
             });
         }
 
-        public void CreateTable()
+        
+
+        public void CreateTable(string x)
         {
-            _tableDal.CreateTable();
+            _tableDal.CreateTable(x);
         }
 
         public List<Table> GetStartedTables()
@@ -47,6 +46,11 @@ namespace AlisPark.Business.Concerete
         public Table GetStartedTableWithId(int tableId)
         {
             return _tableDal.GetStartedTableWithId(tableId);
+        }
+
+        public void RemoveTable(int tableId)
+        {
+            _tableDal.RemoveTable(tableId);
         }
 
         public void StartTable(Table table)

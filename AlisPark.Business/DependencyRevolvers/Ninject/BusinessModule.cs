@@ -38,6 +38,9 @@ namespace AlisPark.Business.DependencyRevolvers.Ninject
             Bind<ITableService>().To<TableManager>().InSingletonScope();
             Bind<ITableDal>().To<EfTableDal>().InSingletonScope();
 
+            Bind<ITableCategoryService>().To<TableCategoryManager>().InSingletonScope();
+            Bind<ITableCategoryDal>().To<EfTableCategoryDal>().InSingletonScope();
+
             Bind<ITableEventService>().To<TableEventManager>().InSingletonScope();
             Bind<ITableEventDal>().To<EfTableEventDal>().InSingletonScope();
 

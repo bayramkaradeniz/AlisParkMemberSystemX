@@ -69,6 +69,7 @@
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\ProductMap.cs" />
     <Compile Include="Concrete\Table.cs" />
+    <Compile Include="Concrete\TableCategory.cs" />
     <Compile Include="Concrete\TableEvent.cs" />
     <Compile Include="Concrete\Worker.cs" />
     <Compile Include="Concrete\WorkerMap.cs" />
