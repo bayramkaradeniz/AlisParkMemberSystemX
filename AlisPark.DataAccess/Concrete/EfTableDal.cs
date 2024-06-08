@@ -24,7 +24,9 @@ namespace AlisPark.DataAccess.Concrete
             }
         }
 
-        public void CreateTable()
+       
+
+        public void CreateTable(string x)
         {
             using (AlisParkContext context = new AlisParkContext())
             {
@@ -32,7 +34,7 @@ namespace AlisPark.DataAccess.Concrete
                 int newTableNumber = lastTable == null ? 1 : lastTable.TableNumber + 1;
                 string newTableName = "Table-" + newTableNumber.ToString("00");
 
-                var newTable = new Table { TableNumber = newTableNumber, TableName = newTableName, IsOccupied = false, TableType = 0 };
+                var newTable = new Table { TableNumber = newTableNumber, TableName = newTableName, IsOccupied = false, CategoryName = x };
 
                 context.Tables.Add(newTable);
                 context.SaveChanges();
@@ -61,6 +63,17 @@ namespace AlisPark.DataAccess.Concrete
                     return table;
                 }
             }
+        }
+
+        public void RemoveTable(int tableId)
+        {
+            using (var context = new AlisParkContext())
+            {
+                var table = context.Tables.SingleOrDefault(p => p.Id == tableId);
+
+                context.Tables.Remove(table);
+                context.SaveChanges();
+                }
         }
 
         public void StartTable(Table table)

@@ -61,6 +61,7 @@
     <Compile Include="Abstract\IMemberDal.cs" />
     <Compile Include="Abstract\IOrderDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
+    <Compile Include="Abstract\ITableCategoryDal.cs" />
     <Compile Include="Abstract\ITableDal.cs" />
     <Compile Include="Abstract\ITableEventDal.cs" />
     <Compile Include="Abstract\IWorkerDal.cs" />
@@ -73,28 +74,13 @@
     <Compile Include="Concrete\EfMemberDal.cs" />
     <Compile Include="Concrete\EfOrderDal.cs" />
     <Compile Include="Concrete\EfProductDal.cs" />
+    <Compile Include="Concrete\EfTableCategoryDal.cs" />
     <Compile Include="Concrete\EfTableDal.cs" />
     <Compile Include="Concrete\EfTableEventDal.cs" />
     <Compile Include="Concrete\EfWorkerDal.cs" />
-    <Compile Include="Migrations\202309051104260_CreateDatabase.cs" />
-    <Compile Include="Migrations\202309051104260_CreateDatabase.designer.cs">
-      <DependentUpon>202309051104260_CreateDatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202406071551481_xx.cs" />
-    <Compile Include="Migrations\202406071551481_xx.Designer.cs">
-      <DependentUpon>202406071551481_xx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202406071614411_xxx.cs" />
-    <Compile Include="Migrations\202406071614411_xxx.Designer.cs">
-      <DependentUpon>202406071614411_xxx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202406071627290_xxxx.cs" />
-    <Compile Include="Migrations\202406071627290_xxxx.Designer.cs">
-      <DependentUpon>202406071627290_xxxx.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202406071643076_xxxxx.cs" />
-    <Compile Include="Migrations\202406071643076_xxxxx.Designer.cs">
-      <DependentUpon>202406071643076_xxxxx.cs</DependentUpon>
+    <Compile Include="Migrations\202406072212467_CreateDatabase.cs" />
+    <Compile Include="Migrations\202406072212467_CreateDatabase.Designer.cs">
+      <DependentUpon>202406072212467_CreateDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -111,20 +97,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202309051104260_CreateDatabase.resx">
-      <DependentUpon>202309051104260_CreateDatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202406071551481_xx.resx">
-      <DependentUpon>202406071551481_xx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202406071614411_xxx.resx">
-      <DependentUpon>202406071614411_xxx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202406071627290_xxxx.resx">
-      <DependentUpon>202406071627290_xxxx.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202406071643076_xxxxx.resx">
-      <DependentUpon>202406071643076_xxxxx.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202406072212467_CreateDatabase.resx">
+      <DependentUpon>202406072212467_CreateDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

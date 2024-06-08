@@ -7,13 +7,13 @@ namespace AlisPark.DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class xxxx : IMigrationMetadata
+    public sealed partial class CreateDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(xxxx));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "202406071627290_xxxx"; }
+            get { return "202406072212467_CreateDatabase"; }
         }
         
         string IMigrationMetadata.Source

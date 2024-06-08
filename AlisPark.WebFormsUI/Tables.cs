@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using AlisPark.Business.Abstract;
 using AlisPark.Business.DependencyRevolvers.Ninject;
 using AlisPark.Entities.Concrete;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AlisPark.WebFormsUI
 {
@@ -20,15 +21,25 @@ namespace AlisPark.WebFormsUI
         {
             InitializeComponent();
             _tableService = InstanceFactory.GetInstance<ITableService>();
+            _tableCategoryService = InstanceFactory.GetInstance<ITableCategoryService>();
             _tableEventService = InstanceFactory.GetInstance<ITableEventService>();
         }
         private ITableService _tableService;
         private ITableEventService _tableEventService;
+        private ITableCategoryService _tableCategoryService;
         private void Tables_Load(object sender, EventArgs e)
         {
+            LoadCategories();
             LoadTableEvents();
             LoadStartedTables();
             LoadTables();
+        }
+
+        private void LoadCategories()
+        {
+            comboBox1.DataSource = _tableCategoryService.GetAll();
+            comboBox1.DisplayMember = "Name";
+            comboBox1.ValueMember = "Id";
         }
 
         private void LoadTableEvents()
@@ -49,7 +60,8 @@ namespace AlisPark.WebFormsUI
 
         private void btnAddTable_Click(object sender, EventArgs e)
         {
-            _tableService.CreateTable();
+            string x = comboBox1.Text;;
+            _tableService.CreateTable(x);
             LoadTables();
         }
 
@@ -108,17 +120,26 @@ namespace AlisPark.WebFormsUI
 
         //}
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        //private void textBox1_TextChanged(object sender, EventArgs e)
+        //{
+        //    int x = Convert.ToInt32(textBox1.Text);
+        //    if (!String.IsNullOrEmpty(textBox1.Text))
+        //    {
+        //        dataGridView4.DataSource = _tableEventService.GetByTableId(x);
+        //    }
+        //    else
+        //    {
+        //        dataGridView4.DataSource = _tableEventService.GetAll();
+        //    }
+        //}
+
+        private void btnTables_Click(object sender, EventArgs e)
         {
-            int x = Convert.ToInt32(textBox1.Text);
-            if (!String.IsNullOrEmpty(textBox1.Text))
-            {
-                dataGridView4.DataSource = _tableEventService.GetByTableId(x);
-            }
-            else
-            {
-                dataGridView4.DataSource = _tableEventService.GetAll();
-            }
+            int tableId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+
+            _tableService.RemoveTable(tableId);
+
+            LoadTables();
         }
 
         private void btnTables_Click(object sender, EventArgs e)

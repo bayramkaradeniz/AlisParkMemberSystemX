@@ -17,7 +17,8 @@ namespace AlisPark.Entities.Concrete
         public string TableName { get; set; }
         public bool IsOccupied { get; set; } = false;
         public DateTime? OpeningTime { get; set; } 
-        public int TableType { get; set; } = 0;
+        public string CategoryName { get; set; } = null;
+
         public List<TableEvent> Events { get; set; } // Bir tablo birden çok olaya sahip olabilir
         public List<Order> Orders { get; set; } = null;
 
