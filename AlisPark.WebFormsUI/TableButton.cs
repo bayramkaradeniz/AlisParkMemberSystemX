@@ -71,10 +71,11 @@ namespace AlisPark.WebFormsUI
 
                 label.MouseDoubleClick += (sender, e) =>
                 {
-                    if (e.Button == MouseButtons.Left)
-                    {
-                        MessageBox.Show($"Left double-clicked on table {table.TableName}");
-                    }
+                    // Buraya gerek yok artık
+                    //if (e.Button == MouseButtons.Left)
+                    //{
+                    //    MessageBox.Show($"Left double-clicked on table {table.TableName}");
+                    //}
 
                     PaymentPage pg = new PaymentPage(table.Id);
                     pg.Show();

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AlisPark.Business.Abstract;
 using AlisPark.DataAccess.Abstract;
+using AlisPark.DataAccess.Concrete;
 using AlisPark.Entities.Concrete;
 
 namespace AlisPark.Business.Concerete
@@ -18,7 +19,23 @@ namespace AlisPark.Business.Concerete
             _tableDal = tableDal;
         }
 
-        
+        public List<Table> GetAll()
+        {
+            //Business code            
+            return _tableDal.GetAll();
+        }
+
+        public List<Table> GetTableById(int tableId)
+        {
+            return _tableDal.GetAll(p => p.TableNumber == tableId);
+        }
+
+        public List<Table> GetTableByName(string tableName)
+        {
+            return _tableDal.GetAll(p => p.TableName.ToLower().Contains(tableName.ToLower()));
+        }
+
+
 
         public void CloseTable(Table table)
         {

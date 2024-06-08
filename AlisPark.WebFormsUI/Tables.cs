@@ -146,6 +146,11 @@ namespace AlisPark.WebFormsUI
             this.Hide();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TableButton tableButton = new TableButton();
+            tableButton.Show();
+        }
     }
 }
 

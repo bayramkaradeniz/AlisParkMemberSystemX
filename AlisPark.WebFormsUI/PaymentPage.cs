@@ -15,16 +15,31 @@ using AlisPark.Business.DependencyRevolvers.Ninject;
 using AlisPark.DataAccess.Abstract;
 using AlisPark.DataAccess.Concrete;
 using AlisPark.Entities.Concrete;
+using Table = AlisPark.Entities.Concrete.Table;
 
 namespace AlisPark.WebFormsUI
 {
     public partial class PaymentPage : Form
     {
+        private double genelToplamUcret = 0.0;
         public int tableId { get; set; }
-        ITableDal _tableDal;
-        private ITableEventDal _tableEventDal;
+
+
         public BindingSource bindingSource;
         private int doubleClickedTableId;
+
+        ITableDal _tableDal;
+        private ITableEventDal _tableEventDal;
+        private ITableService _tableService;
+
+
+        bool virgulClicked = false;
+
+        ICategoryDal _categoryDal;
+        private ICategoryService _categoryService;
+
+        Table thisTable; 
+
         public PaymentPage(int consTableId)
         {
             InitializeComponent();
@@ -32,13 +47,17 @@ namespace AlisPark.WebFormsUI
             _tableDal = InstanceFactory.GetInstance<ITableDal>();
             _tableEventDal = InstanceFactory.GetInstance<ITableEventDal>();
 
+            _categoryService = InstanceFactory.GetInstance<ICategoryService>();
+            _categoryDal = InstanceFactory.GetInstance<ICategoryDal>();
+
             doubleClickedTableId = consTableId;
             masaIdLabel.Text = doubleClickedTableId.ToString();
+
+            thisTable = _tableService.GetStartedTableWithId(consTableId);
+
+            // masaTuruLabel burada belirlenmeli
         }
 
-        private ITableService _tableService;
-
-        bool virgulClicked = false;
         private void AddDigit(int number)
         {
             if (!virgulClicked)
@@ -184,6 +203,53 @@ namespace AlisPark.WebFormsUI
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(genelToplamUcret + " Tutarında Ödeme Alınmıştır.");
+        }
+
+        private void masaUcreti_TextChanged(object sender, EventArgs e)
+        {
+            double doubleMasaUcreti = double.Parse(masaUcreti.Text, System.Globalization.CultureInfo.InvariantCulture);
+            double doubleSiparisToplami = double.Parse(siparisToplami.Text, System.Globalization.CultureInfo.InvariantCulture);
+            //double doubleGenelToplamUcret = double.Parse(genelToplamUcret, System.Globalization.CultureInfo.InvariantCulture);
+
+            genelToplamUcret = doubleMasaUcreti + doubleSiparisToplami;
+            genelToplam.Text = Convert.ToString(genelToplamUcret);
+        }
+
+        private void siparisToplami_TextChanged(object sender, EventArgs e)
+        {
+            double doubleMasaUcreti = double.Parse(masaUcreti.Text, System.Globalization.CultureInfo.InvariantCulture);
+            double doubleSiparisToplami = double.Parse(siparisToplami.Text, System.Globalization.CultureInfo.InvariantCulture);
+            //double doubleGenelToplamUcret = double.Parse(genelToplamUcret, System.Globalization.CultureInfo.InvariantCulture);
+
+            genelToplamUcret = doubleMasaUcreti + doubleSiparisToplami;
+            genelToplam.Text = Convert.ToString(genelToplamUcret);
+        }
+
+        private void tutarEkleButonu_Click(object sender, EventArgs e)
+        {
+            double doubleTutarEkleButonu = double.Parse(tutarEkleButonu.Text, System.Globalization.CultureInfo.InvariantCulture);
+            genelToplam.Text = Convert.ToString(doubleTutarEkleButonu + genelToplamUcret);
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            OrderWindow orderWindow = new OrderWindow(thisTable, new BindingSource());
+            orderWindow.Show();
         }
     }
 }

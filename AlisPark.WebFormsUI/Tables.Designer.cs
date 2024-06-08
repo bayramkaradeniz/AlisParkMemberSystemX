@@ -41,6 +41,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -123,7 +124,7 @@
             // 
             // btnTables
             // 
-            this.btnTables.Location = new System.Drawing.Point(664, 82);
+            this.btnTables.Location = new System.Drawing.Point(664, 85);
             this.btnTables.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTables.Name = "btnTables";
             this.btnTables.Size = new System.Drawing.Size(193, 41);
@@ -182,12 +183,24 @@
             this.label2.Text = "Tür : ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Green;
+            this.button2.Location = new System.Drawing.Point(32, 320);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(296, 36);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Masa Yönetim Paneli";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Tables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(890, 924);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnTables);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -200,7 +213,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Tables";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tables";
+            this.Text = "Masalar";
             this.Load += new System.EventHandler(this.Tables_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -226,5 +239,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
