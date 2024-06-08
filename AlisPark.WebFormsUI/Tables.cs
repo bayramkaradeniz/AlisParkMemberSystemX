@@ -27,7 +27,7 @@ namespace AlisPark.WebFormsUI
         private ITableService _tableService;
         private ITableEventService _tableEventService;
         private ITableCategoryService _tableCategoryService;
-        private void Tables_Load(object sender, EventArgs e)
+        private void Tables_Load(object sender, EventArgs e) 
         {
             LoadCategories();
             LoadTableEvents();
