@@ -80,6 +80,7 @@ namespace AlisPark.DataAccess.Concrete
         {
             using (var context = new AlisParkContext())
             {
+                Console.WriteLine("table.Id = " + table.Id);
                 var tableOne = context.Tables.FirstOrDefault(u => u.Id == table.Id);
                 tableOne.OpeningTime = DateTime.Now;
                 tableOne.IsOccupied = true;

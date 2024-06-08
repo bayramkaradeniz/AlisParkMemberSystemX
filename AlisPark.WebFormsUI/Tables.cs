@@ -140,14 +140,12 @@ namespace AlisPark.WebFormsUI
             _tableService.RemoveTable(tableId);
 
             LoadTables();
-        }
 
-        private void btnTables_Click(object sender, EventArgs e)
-        {
             Form tta = new TableButton();
             tta.Show();
             this.Hide();
         }
+
     }
 }
 
