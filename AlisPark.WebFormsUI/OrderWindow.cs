@@ -27,6 +27,7 @@ namespace AlisPark.WebFormsUI
 
         private IProductService _productService;
         private IOrderService _orderService;
+        private ITableEventService _tableEventService;
         Table table;
 
       //  public event Action ReloadMasaPanel;
@@ -36,9 +37,11 @@ namespace AlisPark.WebFormsUI
             
             _productService = InstanceFactory.GetInstance<IProductService>();
             _orderService = InstanceFactory.GetInstance<IOrderService>();
+            _tableEventService = InstanceFactory.GetInstance<ITableEventService>();
 
             bSource = bindingSource;
             table = tab;
+            
 
         }
         private void OrderWindow_Load(object sender, EventArgs e)
@@ -163,7 +166,7 @@ namespace AlisPark.WebFormsUI
         private void button2_Click(object sender, EventArgs e) // Send Order Button - "Bitir"
         {
             // Read entire DGV
-            // Turn dgv rows into Order Entity - Don't maybe
+            // Turn dgv rows into Order Entity - TableEvents yap veya
             // Add them to database as reading continue...
             ITableDal tableDal = InstanceFactory.GetInstance<ITableDal>();
             foreach (DataGridViewRow row in dgvProductList.Rows)
@@ -181,6 +184,16 @@ namespace AlisPark.WebFormsUI
                 order.Table = tableDal.Get(t => t.Id == table.Id);
                 
                 _orderService.Add(order);
+
+                TableEvent tableEvent = new TableEvent();
+                tableEvent.Id = table.Id;
+                tableEvent.EventDescription = "Sipariş";
+                tableEvent.OpeningTime = DateTime.Now; // burası yanlış
+                tableEvent.ClosingTime = DateTime.MinValue;
+                tableEvent.Duration = "";
+                tableEvent.EventTime = DateTime.Now;
+
+                // İleride _tableEventService.Add ;
             }
 
             //    PopulateDataGridView();
@@ -223,6 +236,9 @@ namespace AlisPark.WebFormsUI
              _productService.GetProductsByProductName(searchBox.Text);
         }
 
-        
+        private void button1_Click(object sender, EventArgs e) // Geri Al
+        {
+            dgvProductList.Rows.RemoveAt(dgvProductList.Rows.Count - 1);
+        }
     }
 }

@@ -30,6 +30,7 @@ namespace AlisPark.WebFormsUI
 
         ITableDal _tableDal;
         private ITableEventDal _tableEventDal;
+        private ITableEventService _tableEventService;
         private ITableService _tableService;
 
 
@@ -46,6 +47,7 @@ namespace AlisPark.WebFormsUI
             _tableService = InstanceFactory.GetInstance<ITableService>();
             _tableDal = InstanceFactory.GetInstance<ITableDal>();
             _tableEventDal = InstanceFactory.GetInstance<ITableEventDal>();
+            _tableEventService = InstanceFactory.GetInstance<ITableEventService>();
 
             _categoryService = InstanceFactory.GetInstance<ICategoryService>();
             _categoryDal = InstanceFactory.GetInstance<ICategoryDal>();
@@ -54,6 +56,8 @@ namespace AlisPark.WebFormsUI
             masaIdLabel.Text = doubleClickedTableId.ToString();
 
             thisTable = _tableService.GetStartedTableWithId(consTableId);
+
+            LoadTableEvents();
 
             // masaTuruLabel burada belirlenmeli
         }
@@ -250,6 +254,16 @@ namespace AlisPark.WebFormsUI
         {
             OrderWindow orderWindow = new OrderWindow(thisTable, new BindingSource());
             orderWindow.Show();
+        }
+
+        private void tableEventsDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void LoadTableEvents()
+        {
+            tableEventsDGV.DataSource = _tableEventService.GetByTableId(thisTable.Id);
         }
     }
 }

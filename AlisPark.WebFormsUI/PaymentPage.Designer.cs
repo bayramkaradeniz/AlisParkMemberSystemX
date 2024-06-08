@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tutarEkleButonu = new System.Windows.Forms.Button();
             this.fiyat1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button26 = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@
             this.button28 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.masaTuruLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.genelToplam = new System.Windows.Forms.TextBox();
@@ -56,10 +58,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.siparisToplami = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tutarEkleButonu = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.tableEventsDGV = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableEventsDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -82,8 +85,21 @@
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.panel3.Location = new System.Drawing.Point(710, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(641, 706);
+            this.panel3.Size = new System.Drawing.Size(641, 630);
             this.panel3.TabIndex = 0;
+            // 
+            // tutarEkleButonu
+            // 
+            this.tutarEkleButonu.BackColor = System.Drawing.Color.Olive;
+            this.tutarEkleButonu.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tutarEkleButonu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tutarEkleButonu.Location = new System.Drawing.Point(276, 521);
+            this.tutarEkleButonu.Name = "tutarEkleButonu";
+            this.tutarEkleButonu.Size = new System.Drawing.Size(356, 104);
+            this.tutarEkleButonu.TabIndex = 14;
+            this.tutarEkleButonu.Text = "Ekle";
+            this.tutarEkleButonu.UseVisualStyleBackColor = false;
+            this.tutarEkleButonu.Click += new System.EventHandler(this.tutarEkleButonu_Click);
             // 
             // fiyat1
             // 
@@ -298,9 +314,19 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Location = new System.Drawing.Point(12, 12);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(692, 706);
+            this.panel4.Size = new System.Drawing.Size(692, 630);
             this.panel4.TabIndex = 1;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Location = new System.Drawing.Point(3, 13);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(690, 25);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "UYARI: Sistem dili Türkçe ise sayıları , ile yazın, İngilizce ise . ile yazın!";
             // 
             // masaTuruLabel
             // 
@@ -404,32 +430,30 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Sipariş Toplamı:";
             // 
-            // tutarEkleButonu
+            // tableEventsDGV
             // 
-            this.tutarEkleButonu.BackColor = System.Drawing.Color.Olive;
-            this.tutarEkleButonu.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.tutarEkleButonu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tutarEkleButonu.Location = new System.Drawing.Point(276, 521);
-            this.tutarEkleButonu.Name = "tutarEkleButonu";
-            this.tutarEkleButonu.Size = new System.Drawing.Size(356, 104);
-            this.tutarEkleButonu.TabIndex = 14;
-            this.tutarEkleButonu.Text = "Ekle";
-            this.tutarEkleButonu.UseVisualStyleBackColor = false;
-            this.tutarEkleButonu.Click += new System.EventHandler(this.tutarEkleButonu_Click);
+            this.tableEventsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableEventsDGV.Location = new System.Drawing.Point(12, 703);
+            this.tableEventsDGV.Name = "tableEventsDGV";
+            this.tableEventsDGV.Size = new System.Drawing.Size(693, 150);
+            this.tableEventsDGV.TabIndex = 2;
+            this.tableEventsDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableEventsDGV_CellContentClick);
             // 
-            // label10
+            // label12
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(3, 13);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(690, 25);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "UYARI: Sistem dili Türkçe ise sayıları , ile yazın, İngilizce ise . ile yazın!";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(2, 645);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(309, 55);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "Masa Geçmişi:";
             // 
             // PaymentPage
             // 
-            this.ClientSize = new System.Drawing.Size(1395, 857);
+            this.ClientSize = new System.Drawing.Size(1405, 955);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.tableEventsDGV);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Name = "PaymentPage";
@@ -437,7 +461,9 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableEventsDGV)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -496,5 +522,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button tutarEkleButonu;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView tableEventsDGV;
+        private System.Windows.Forms.Label label12;
     }
 }
