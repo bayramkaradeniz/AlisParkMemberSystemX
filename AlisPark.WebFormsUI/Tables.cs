@@ -120,6 +120,13 @@ namespace AlisPark.WebFormsUI
                 dataGridView4.DataSource = _tableEventService.GetAll();
             }
         }
+
+        private void btnTables_Click(object sender, EventArgs e)
+        {
+            Form tta = new TableButton();
+            tta.Show();
+            this.Hide();
+        }
     }
 }
 

@@ -75,6 +75,11 @@ namespace AlisPark.WebFormsUI
                     {
                         MessageBox.Show($"Left double-clicked on table {table.TableName}");
                     }
+
+                    PaymentPage pg = new PaymentPage(table.Id);
+                    pg.Show();
+
+
                 };
 
 
@@ -238,7 +243,6 @@ namespace AlisPark.WebFormsUI
             PopulateDataGridView();
 
             //   ChangePrice( "MASA " + ((TableButton)TableButton.ActiveForm).tableId.ToString() );
-            ChangeTableText("MASA " + tab.Id);
             bindingSource = bSource;
         }
 
@@ -321,10 +325,6 @@ namespace AlisPark.WebFormsUI
             }
         }
 
-        public void ChangeTableText(string title)
-        {
-            label3.Text = title;
-        }
         private void SetupLayout()
         {
             this.Size = new Size(600, 500);
@@ -433,127 +433,15 @@ namespace AlisPark.WebFormsUI
             dataGridView1.Rows.Add(row);
         }
 
-        bool virgulClicked = false;
 
-        private void AddDigit(int number)
-        {
-            if (!virgulClicked)
-                textBox3.Text = number.ToString() + textBox3.Text;
-            else
-                textBox3.Text = textBox3.Text + number.ToString();
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddDigit(1);
-        }
+     
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            AddDigit(2);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            AddDigit(3);
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            AddDigit(4);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            AddDigit(5);
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            AddDigit(6);
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            AddDigit(7);
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            AddDigit(8);
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-            AddDigit(9);
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            AddDigit(0);
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button10_Click(object sender, EventArgs e) // virgül
-        {
-            if (virgulClicked)
-                virgulClicked = false;
-            else
-                virgulClicked = true;
-
-            if (fiyat1.Text == null)
-            {
-                fiyat1.Text = ",";
-            }
-        }
-
-        private void button12_Click(object sender, EventArgs e) // silme tuşu
-        {
-            string[] sep = fiyat1.Text.Split(',');
-            if (virgulClicked == true)
-            {
-                if (sep[1].Length == 0)
-                {
-                    virgulClicked = false;
-                    RemoveOneDigit(sep[0]);
-                }
-                else
-                    sep[1] = RemoveOneDigit(sep[1]);
-            }
-            else
-            {
-                if (sep[0].Length == 0)
-                {
-                    virgulClicked = true;
-                    RemoveOneDigit(sep[1]);
-                }
-                else
-                    sep[0] = RemoveOneDigit(sep[0]);
-            }
-
-            string newNum = sep[0] + "," + sep[1];
-            fiyat1.Text = newNum;
-        }
-
-        private string RemoveOneDigit(string num)
-        {
-            string truncatedStr = "";
-            if (virgulClicked)
-                truncatedStr = num.Substring(1); // TRY CATCH KOYULACAK
-            else
-                truncatedStr = num.Remove(num.Length - 1); // TRY CATCH KOYULACAK
-            return truncatedStr;
-        }
-
-        private void button14_Click(object sender, EventArgs e) // Order Panel Button
-        {
-            OrderWindow orderPanel = new OrderWindow(table, bindingSource);
-            orderPanel.Owner = this;
-            orderPanel.Show();
-        }
+        //private void button14_Click(object sender, EventArgs e) // Order Panel Button
+        //{
+        //    OrderWindow orderPanel = new OrderWindow(table, bindingSource);
+        //    orderPanel.Owner = this;
+        //    orderPanel.Show();
+        //}
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -573,6 +461,17 @@ namespace AlisPark.WebFormsUI
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
           
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Tables tab = new Tables();
+            tab.Show();
         }
     }
 }

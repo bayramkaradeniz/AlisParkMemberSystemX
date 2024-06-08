@@ -32,8 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.productName = new System.Windows.Forms.Label();
-            this.frequentlyUsed = new System.Windows.Forms.FlowLayoutPanel();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvProductList = new System.Windows.Forms.DataGridView();
@@ -42,18 +40,16 @@
             this.totalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.SıkKullanılanlar = new System.Windows.Forms.Label();
             this.ürünler = new System.Windows.Forms.Label();
-            this.frequentlyUsed.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(15, 357);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 77);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(856, 314);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(865, 534);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -80,23 +76,6 @@
             this.productName.Size = new System.Drawing.Size(100, 23);
             this.productName.TabIndex = 0;
             // 
-            // frequentlyUsed
-            // 
-            this.frequentlyUsed.Controls.Add(this.button3);
-            this.frequentlyUsed.Location = new System.Drawing.Point(12, 82);
-            this.frequentlyUsed.Name = "frequentlyUsed";
-            this.frequentlyUsed.Size = new System.Drawing.Size(859, 216);
-            this.frequentlyUsed.TabIndex = 2;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(3, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.button1);
@@ -110,9 +89,10 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Tomato;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.Location = new System.Drawing.Point(3, 528);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(112, 34);
             this.button1.TabIndex = 4;
             this.button1.Text = "Geri Al";
             this.button1.UseVisualStyleBackColor = false;
@@ -147,11 +127,12 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.Location = new System.Drawing.Point(201, 528);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(103, 34);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Tamam";
+            this.button2.Text = "Bitir";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -159,27 +140,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(878, -5);
+            this.label1.Location = new System.Drawing.Point(878, 2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 45);
             this.label1.TabIndex = 4;
             this.label1.Text = "Ürün Listesi";
             // 
-            // SıkKullanılanlar
-            // 
-            this.SıkKullanılanlar.AutoSize = true;
-            this.SıkKullanılanlar.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SıkKullanılanlar.Location = new System.Drawing.Point(13, 49);
-            this.SıkKullanılanlar.Name = "SıkKullanılanlar";
-            this.SıkKullanılanlar.Size = new System.Drawing.Size(173, 30);
-            this.SıkKullanılanlar.TabIndex = 1;
-            this.SıkKullanılanlar.Text = "Sık Kullanılanlar";
-            // 
             // ürünler
             // 
             this.ürünler.AutoSize = true;
             this.ürünler.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ürünler.Location = new System.Drawing.Point(13, 329);
+            this.ürünler.Location = new System.Drawing.Point(12, 49);
             this.ürünler.Name = "ürünler";
             this.ürünler.Size = new System.Drawing.Size(81, 25);
             this.ürünler.TabIndex = 5;
@@ -192,16 +163,13 @@
             this.ClientSize = new System.Drawing.Size(1257, 666);
             this.Controls.Add(this.ürünler);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.SıkKullanılanlar);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.frequentlyUsed);
             this.Controls.Add(this.searchBox);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Name = "OrderWindow";
             this.Text = "OrderWindow";
             this.Load += new System.EventHandler(this.OrderWindow_Load);
-            this.frequentlyUsed.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).EndInit();
             this.ResumeLayout(false);
@@ -215,7 +183,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label productName;
         private System.Windows.Forms.TextBox searchBox;
-        private System.Windows.Forms.FlowLayoutPanel frequentlyUsed;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvProductList;
@@ -224,8 +191,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn product;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPrice;
-        private System.Windows.Forms.Label SıkKullanılanlar;
         private System.Windows.Forms.Label ürünler;
-        private System.Windows.Forms.Button button3;
     }
 }

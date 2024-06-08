@@ -31,7 +31,6 @@ namespace AlisPark.Business.DependencyRevolvers.Ninject
             Bind<ICompanyService>().To<CompanyManager>().InSingletonScope();
             Bind<ICompanyDal>().To<EfCompanyDal>().InSingletonScope();
 
-
             Bind<IMailSenderService>().To<MailManager>().InSingletonScope();
             Bind<IMailSenderDal>().To<EfMailSender>().InSingletonScope();
 
@@ -43,6 +42,9 @@ namespace AlisPark.Business.DependencyRevolvers.Ninject
 
             Bind<IOrderService>().To<OrderManager>().InSingletonScope();
             Bind<IOrderDal>().To<EfOrderDal>().InSingletonScope();
+
+            Bind<IProductService>().To<ProductManager>().InSingletonScope();
+            Bind<IProductDal>().To<EfProductDal>().InSingletonScope();
         }
     }
 }

@@ -75,7 +75,7 @@ namespace AlisPark.WebFormsUI
                 row.Cells[2].Value = (decimal)row.Cells[2].Value + (productAmountDecimal * productPrice);
             
             dgvProductList.Rows.Add(row);
-            dgvProductList.DataSource = ((DataRowView)dgvProductList.Rows[0].DataBoundItem).DataView.Table;
+            //dgvProductList.DataSource = ((DataRowView)dgvProductList.Rows[0].DataBoundItem).DataView.Table;
             bSource.DataSource = dgvProductList.DataSource;
         }
 
@@ -160,7 +160,7 @@ namespace AlisPark.WebFormsUI
             flowLayoutPanel1.Controls.Add(panel1);
         }
 
-        private void button2_Click(object sender, EventArgs e) // Send Order Button
+        private void button2_Click(object sender, EventArgs e) // Send Order Button - "Bitir"
         {
             // Read entire DGV
             // Turn dgv rows into Order Entity - Don't maybe
@@ -182,8 +182,6 @@ namespace AlisPark.WebFormsUI
                 
                 _orderService.Add(order);
             }
-
-
 
             //    PopulateDataGridView();
             dgvProductList.Rows.Clear();

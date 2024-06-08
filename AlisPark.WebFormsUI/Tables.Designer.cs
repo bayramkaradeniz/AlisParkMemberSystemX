@@ -46,19 +46,19 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 52);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(32, 42);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(836, 156);
+            this.dataGridView1.Size = new System.Drawing.Size(627, 127);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnAddTable
             // 
-            this.btnAddTable.Location = new System.Drawing.Point(63, 225);
-            this.btnAddTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddTable.Location = new System.Drawing.Point(32, 183);
+            this.btnAddTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddTable.Name = "btnAddTable";
-            this.btnAddTable.Size = new System.Drawing.Size(193, 41);
+            this.btnAddTable.Size = new System.Drawing.Size(145, 33);
             this.btnAddTable.TabIndex = 1;
             this.btnAddTable.Text = "Masa Ekle";
             this.btnAddTable.UseVisualStyleBackColor = true;
@@ -66,10 +66,10 @@
             // 
             // btnStartTable
             // 
-            this.btnStartTable.Location = new System.Drawing.Point(281, 225);
-            this.btnStartTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnStartTable.Location = new System.Drawing.Point(196, 183);
+            this.btnStartTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStartTable.Name = "btnStartTable";
-            this.btnStartTable.Size = new System.Drawing.Size(193, 41);
+            this.btnStartTable.Size = new System.Drawing.Size(145, 33);
             this.btnStartTable.TabIndex = 2;
             this.btnStartTable.Text = "Masa Aç";
             this.btnStartTable.UseVisualStyleBackColor = true;
@@ -78,19 +78,19 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(43, 282);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Location = new System.Drawing.Point(32, 229);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(836, 156);
+            this.dataGridView2.Size = new System.Drawing.Size(627, 127);
             this.dataGridView2.TabIndex = 3;
             // 
             // btnCloseSession
             // 
-            this.btnCloseSession.Location = new System.Drawing.Point(499, 225);
-            this.btnCloseSession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCloseSession.Location = new System.Drawing.Point(360, 183);
+            this.btnCloseSession.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCloseSession.Name = "btnCloseSession";
-            this.btnCloseSession.Size = new System.Drawing.Size(193, 41);
+            this.btnCloseSession.Size = new System.Drawing.Size(145, 33);
             this.btnCloseSession.TabIndex = 4;
             this.btnCloseSession.Text = "Masa Kapa";
             this.btnCloseSession.UseVisualStyleBackColor = true;
@@ -99,48 +99,49 @@
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(57, 471);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView3.Location = new System.Drawing.Point(32, 383);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.Size = new System.Drawing.Size(822, 156);
+            this.dataGridView3.Size = new System.Drawing.Size(627, 127);
             this.dataGridView3.TabIndex = 5;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 658);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Location = new System.Drawing.Point(32, 535);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(277, 22);
+            this.textBox1.Size = new System.Drawing.Size(627, 20);
             this.textBox1.TabIndex = 6;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(43, 703);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView4.Location = new System.Drawing.Point(32, 571);
+            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.Size = new System.Drawing.Size(703, 156);
+            this.dataGridView4.Size = new System.Drawing.Size(627, 127);
             this.dataGridView4.TabIndex = 7;
             // 
             // btnTables
             // 
-            this.btnTables.Location = new System.Drawing.Point(697, 225);
-            this.btnTables.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTables.Location = new System.Drawing.Point(523, 183);
+            this.btnTables.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTables.Name = "btnTables";
-            this.btnTables.Size = new System.Drawing.Size(182, 41);
+            this.btnTables.Size = new System.Drawing.Size(136, 33);
             this.btnTables.TabIndex = 8;
             this.btnTables.Text = "Masalar";
             this.btnTables.UseVisualStyleBackColor = true;
+            this.btnTables.Click += new System.EventHandler(this.btnTables_Click);
             // 
             // Tables
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(923, 983);
+            this.ClientSize = new System.Drawing.Size(692, 799);
             this.Controls.Add(this.btnTables);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.textBox1);
@@ -150,7 +151,7 @@
             this.Controls.Add(this.btnStartTable);
             this.Controls.Add(this.btnAddTable);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Tables";
             this.Text = "Tables";
             this.Load += new System.EventHandler(this.Tables_Load);
